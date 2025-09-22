@@ -177,7 +177,7 @@ def inyectiva(funcion):
     valores_imagen = [par[1] for par in funcion]
     return len(valores_imagen) == len(set(valores_imagen))
 
-print(f"Funcion f(x) = 2x: {f1}")
+print(f"Función f(x) = 2x: {f1}")
 print(f"Es inyectiva: {inyectiva(f1)}")
 
 #Sobreyectiva
@@ -185,7 +185,7 @@ def sobreyectiva(funcion, codominio):
     valores_imagen = {par[1] for par in funcion}
     return valores_imagen == codominio
 
-print(f"Funcion f(x) = x mod 3: {f2}")
+print(f"Función f(x) = x mod 3: {f2}")
 print(f"Codominio: {codominio2}")
 print(f"Es sobreyectiva: {sobreyectiva(f2, codominio2)}")
 
@@ -193,13 +193,13 @@ print(f"Es sobreyectiva: {sobreyectiva(f2, codominio2)}")
 def biyectiva(funcion, codominio):
     return inyectiva(funcion) and sobreyectiva(funcion, codominio)
 
-print(f"Funcion f(x) = x + 1: {f3}")
+print(f"\nFunción f(x) = x + 1: {f3}")
 print(f"Codominio: {codominio3}")
 print(f"Es biyectiva: {biyectiva(f3, codominio3)}")
 
 # clausuras
 R_original = {(1, 2), (2, 3)} #relacion original
-print(f"Relacion original: {R_original}")
+print(f"Relación original: {R_original}")
 
 #Clausura Reflexiva
 def clausura_reflexiva(relacion, conjunto):
@@ -209,13 +209,13 @@ R_reflexiva = clausura_reflexiva(R_original, C)
 print(f"Clausura Reflexiva: {R_reflexiva}")
 print(f"Es reflexiva: {reflexiva(R_reflexiva, C)}")
 
-#Clausura simetrica
+#Clausura Simétrica
 def clausura_simetrica(relacion):
     return relacion.union({(y, x) for x, y in relacion})
 
 R_sim = clausura_simetrica(R_original)
-print(f"Clausura simetrica: {R_sim}")
-print(f"Es simetrica: {simetrica(R_sim)}")
+print(f"Clausura Simétrica: {R_sim}")
+print(f"Es simétrica: {simetrica(R_sim)}")
 
 #Clausura Transitiva
 def clausura_transitiva(relacion):
@@ -238,5 +238,139 @@ def clausura_equivalencia(relacion, conjunto):
 
 R_eq_clausura = clausura_equivalencia(R_original, C)
 print(f"Clausura de Equivalencia: {R_eq_clausura}")
-print(f"Es una relacion de equivalencia: {verificar_relacion_equivalencia(R_eq_clausura, C)}")
+print(f"Es una relación de equivalencia: {verificar_relacion_equivalencia(R_eq_clausura, C)}")
 
+
+"""Universidad de Panamá
+Centro Regional Universitario de Coclé
+Lic. Ing. Informática
+
+Materia: 
+Informática teórica(INF 221)
+
+Profesor:
+Luis Domínguez 
+Estudiantes: 
+Giovanni Coronado
+Jose Conte
+Marielys Quiroz
+
+Fecha: 
+18-09-2025
+
+
+
+
+
+Notación de conjuntos:
+Extensión: 
+Para describir los elementos de un determinado conjunto los puedes mencionar uno a uno, a esto se conoce como descripción por extensión.  Definamos como el conjunto conformado por los colores del arco iris, en este caso podemos describir el conjunto por extensión así:
+Ejemplo: 
+Q= {naranja, amarillo, verde, azul}
+
+Comprensión:
+Se puede entonces describir los conjuntos mencionando las características que comparten los elementos que los conforman.  Por ejemplo, si es el conjunto conformado por todos los países del mundo se puede escribir:
+C = {x|x es un país}
+En donde la barra | se lee como “tales que”.  Así, la anterior expresión se lee: “es el conjunto de los tales que es un país”.  En este caso el símbolo es usado simplemente para representar los elementos del conjunto.
+Cardinalidad:
+La cardinalidad se refiere al número que se obtiene al contar algo. Por lo tanto, la cardinalidad de un conjunto es el número de elementos que lo componen. 
+Ejemplo: 
+el conjunto {1, 2, 3, 4, 5} tiene una cardinalidad de cinco, que es mayor que la de {1, 2, 3}, que es tres.
+
+Conjuntos infinitos: 
+Los conjuntos infinitos son aquellos que contienen una cantidad ilimitada de elementos. Es decir, aquellos que se extienden de forma indefinida.
+el conjunto de números naturales enteros es infinito, pero es numerable, pues es posible identificar el elemento 1, 2, 3, etc.
+
+
+Operaciones con conjuntos:
+Unión: 
+La unión de dos o más conjuntos da como resultado un conjunto completamente nuevo que contiene una combinación de elementos presentes en ambos conjuntos.
+Ejemplo: 
+dos conjuntos A y B, donde A = {a, b, j, k} y B = {h, t, k, c}. Por lo tanto, los elementos de ambos conjuntos son a, b, c, j, k, h, t. 
+Intersección: 
+La intersección de conjuntos es el conjunto de elementos comunes a los conjuntos dados, es decir; los elementos del conjunto A que también están presentes en el conjunto B.
+Ejemplo: 
+A: {A, B, C, D} B: {B, E, C, D, J} 
+Diferencia: 
+La diferencia de dos conjuntos A y B se define como las listas de todos los elementos que están en el conjunto A pero que no están presentes en el conjunto B. 
+Ejemplo: si A = {1, 2, 3} y B = {3, 5, 7}, entonces A - B es {1, 2}, ya que 1 y 2 están en A, pero no en B.
+Diferencia simétrica:
+La diferencia simétrica entre dos conjuntos, denotada, es el conjunto de elementos que pertenecen a uno de los conjuntos, pero no a ambos a la vez. 
+Ejemplo: 
+A = {1, 2, 3, 4} y B = {3, 4, 5, 6}, 
+{1,2} (elementos en A pero no en B).
+{5, 6} (elementos en B pero no en A).
+Diferencia simétrica = {1, 2} {5, 6} = {1, 2, 5, 6}.
+Complemento:
+El complemento de un conjunto es el conjunto que incluye todos los elementos del conjunto universal que no están presentes en el conjunto dado.
+Ejemplo: 
+U= {1,2,3,5,6}
+A={1,2,3}
+Aª={4,5,6}
+Producto cartesiano: 
+El producto cartesiano es el producto de dos conjuntos cualesquiera , pero este producto está ordenado, es decir, el conjunto resultante contiene todos los pares posibles y ordenados, de modo que el primer elemento del par pertenece al primer conjunto y el segundo al segundo. 
+Ejemplo: 
+A × B = {(1, a), (1, b), (1, c), (2, a), (2, b), (2, c)}.
+Relaciones y funciones 
+Reflexiva: 
+La relación reflexiva es una relación entre los elementos de un conjunto A, de modo que cada elemento del conjunto está relacionado consigo mismo.
+Ejemplo: 
+Sea A = {a, b, c, d, e} y R es una relación definida en A como R = {(a, a), (a, b), (b, b), (c, c), (d, d), (e, e), (c, e)}. Como (a, a), (b, b), (c, c), (d, d), (e, e), entonces R es una relación reflexiva ya que cada elemento de A está relacionado consigo mismo en R.
+Simétrica: 
+la relación simétrica se define como una relación binaria R en X si, y solo si, un elemento a está relacionado con b, entonces b también está relacionado con a para cada a, b en X.
+Ejemplo: 
+el conjunto A = {1, 2, 3} y la relación R = {(1, 2), (2, 1), (3, 3)}, entonces R es simétrica porque por cada par ordenado existe su inverso 
+
+
+Antisimétrica: 
+Una relación antisimétrica en un conjunto A es aquella donde, si un elemento 'a' está relacionado con 'b' y 'b' está relacionado con 'a', entonces 'a' debe ser igual a 'b'.
+Ejemplo:
+La relación "≤" (menor o igual que) en el conjunto de números enteros es antisimétrica. Si a ≤ b y b ≤ a, esto implica que a = b.
+Transitiva:
+Las relaciones transitivas son relaciones binarias definidas en un conjunto, de modo que si el primer elemento está relacionado con el segundo, y este con el tercero, entonces el primer elemento debe estarlo con el tercero. 
+Ejemplo: 
+para tres elementos a, b, c del conjunto A, si a = b y b = c, entonces a = c. 
+Funciones
+Inyectiva: 
+Una función inyectiva f es si cada elemento del conjunto final Y tiene un único elemento del conjunto inicial X al que le corresponde. Es decir, no pueden haber más de un valor de X que tenga la misma imagen Y.
+Ejemplo: 
+La función f(x) = 2x+1 , con los elementos de su dominio restringidos a los números reales positivos, es inyectiva.
+
+Sobreyectiva:
+Una función sobreyectiva (o suprayectiva) f es una función tal que todos los elementos del conjunto final Y tienen al menos un elemento del conjunto inicial X al que le corresponde.
+Ejemplo: 
+la función en los números reales definida por f(x) = x+1. Es una función sobreyectiva. 
+
+
+Biyectiva:
+Una función biyectiva conecta elementos de dos conjuntos de tal manera que es inyectiva y sobreyectiva. 
+Ejemplo:
+A y B con el dominio del conjunto A y el codominio del conjunto B, de modo que cada elemento de A se relaciona con un elemento distinto de B, y cada elemento del conjunto B es la imagen de algún elemento del conjunto A.
+Clausuras:
+Reflexiva: 
+ Es la relación más pequeña que contiene una relación dada y también cumple la propiedad de reflexividad. 
+Ejemplo: 
+una relación sobre el conjunto A={1, 2}. Si la relación R = {(1, 2)} se completa reflexivamente, se convierten en R' = {(1, 2), (1, 1), (2, 2)}. 
+
+Simétrica: 
+La clausura simétrica de una relación es la relación simétrica más pequeña que contiene la relación original. Se obtiene uniendo la relación original con su relación inversa. 
+Ejemplo: 
+Consideremos la relación R en el conjunto A = {1, 2, 3} dada por los pares ordenados (1, 2) y (3, 3). 
+Relación original(R): {(1, 2), (3, 3)} 
+Relación Inversa (R⁻¹): R⁻¹ es {(2, 1), (3, 3)}. 
+Clausura Simétrica (S): La clausura simétrica se forma al unir R y R⁻¹. 
+S = {(1, 2), (3, 3)} ∪ {(2, 1), (3, 3)}
+S = {(1, 2), (3, 3), (2, 1)} 
+
+
+
+Transitiva: 
+La clausura transitiva de una relación es una nueva relación que incluye todas las conexiones directas e indirectas de la relación original.
+Ejemplo: 
+Si a – b es un entero y b – c es un entero, entonces (a – b) + (b – c) = a – c es un entero; en consecuencia, R es transitiva.
+
+Equivalencia: 
+una relación en un conjunto A se denomina relación de equivalencia si es reflexiva, simétrica y transitiva. Esto significa que si una relación cumple estas tres propiedades, se considera una relación de equivalencia y nos ayuda a agrupar elementos u objetos similares.
+Ejemplo: 
+Sea N el conjunto de los números naturales: N={0,1,2,3…8,9,10} y consideremos el conjunto NxN que consiste de todas las parejas
+ordenadas de números naturales, donde ordenadas quiere decir que (2,4) no es lo mismo que (4,2). """
