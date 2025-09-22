@@ -374,3 +374,5 @@ una relación en un conjunto A se denomina relación de equivalencia si es refle
 Ejemplo: 
 Sea N el conjunto de los números naturales: N={0,1,2,3…8,9,10} y consideremos el conjunto NxN que consiste de todas las parejas
 ordenadas de números naturales, donde ordenadas quiere decir que (2,4) no es lo mismo que (4,2). """
+
+#Enlace del repositorio: https://github.com/Kan-25/Laboratorio_1.git
